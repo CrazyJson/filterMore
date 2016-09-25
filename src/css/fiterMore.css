@@ -75,7 +75,12 @@
     font-size:14px;
 }
 
-.r .text{
+.searchbox .r:focus, .searchbox .r:hover{
+    text-decoration:none;
+}
+
+
+.searchbox .r .text{
     font-size:14px;
 }
 
@@ -102,7 +107,7 @@
     height:100%;
 }
 
-.btn_filter_sure{background-color:#F5F5F5;border: 1px solid #DDD;display: inline-block;cursor:pointer;width:50px;height:22px;text-align:center;line-height:22px;}
+.btn_filter_sure{background-color:#F5F5F5;border: 1px solid #DDD;display: inline-block;cursor:pointer;width:48px;height:22px;text-align:center;line-height:22px;}
 .btn_filter_sure:hover{background-color:#49F;border: 1px solid #49F; color: #FFF;}
 
 .filter_btn{

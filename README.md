@@ -83,8 +83,8 @@
 
 ##	下载
 
-* [template.js](https://raw.github.com/aui/artTemplate/master/dist/template.js) *(简洁语法版, 2.7kb)* 
-* [template-native.js](https://raw.github.com/aui/artTemplate/master/dist/template-native.js) *(原生语法版, 2.3kb)*
+* [filterMore.min.js](https://raw.githubusercontent.com/CrazyJson/filterMore/master/dist/filterMore.min.js) *(压缩后js文件, 7.9kb)*
+* [fiterMore.min.css](https://raw.githubusercontent.com/CrazyJson/filterMore/master/dist/css/fiterMore.min.css) *(压缩后css文件, 2.1kb)*
 
 ## 方法
 

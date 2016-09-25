@@ -305,7 +305,7 @@ $.extend(String.prototype, {
                     '<div class="control-type">({0})</div><div class="filter_option" style="padding-right:{1}px;">'.format(item.isMultiple ? "多选" : "单选", _getCustomDivWidth(item) + 20) + _createOptions(item) +
                     '</div>' + _createCustomFilter(i, item) +
                     '</div>' +
-                    '<a href="javascript:;" class="r" id="{0}_r"><span class="text">展开</span><i class="fa fa-angle-double-down"></i></a>'.format(item.id) +
+                    '<a href="javascript:;" class="r" id="{0}_r"><span class="text">展开</span></a>'.format(item.id) +
                     '</div>');
                 });
 
@@ -475,16 +475,13 @@ $.extend(String.prototype, {
                     return;
                 }
 
-                var objFont = $(that).find(".fa");
                 var objcenter = $(that).siblings(".c");
 
                 if (state == "expand") {
                     $(that).find(".text").text("收缩");
-                    objFont.removeClass("fa-angle-double-down").addClass("fa-angle-double-up");
                     $(that).siblings(".c").css({ "height": "auto" });
                 } else {
                     $(that).find(".text").text("展开");
-                    objFont.removeClass("fa-angle-double-up").addClass("fa-angle-double-down");
                     objcenter.css({ height: 30 });
                 }
                 //修复如果有多个展开条件时，搜索框高度自适应问题
@@ -533,8 +530,8 @@ $.extend(String.prototype, {
                  * 创建时间：2015-12-21
                  */
                 function _getExpandState(obj) {
-                    var objFont = $(obj).find(".fa");
-                    if (objFont.hasClass("fa-angle-double-down")) {
+                    var objText = $(obj).find(".text");
+                    if (objText.text()=='展开') {
                         return "expand";
                     } else {
                         return "collaspe";

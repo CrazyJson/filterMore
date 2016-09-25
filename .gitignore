@@ -137,6 +137,8 @@ Desktop.ini
 *.egg
 *.egg-info
 build
+node_modules
+.idea
 eggs
 parts
 bin
