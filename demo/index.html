@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>fiterMore demo演示</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/css/fiterMore.min.css">
+    <style>
+        .t-red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>演示</h1>
+<ul>
+    <li><a href="#paramRemark" >参数说明</a></li>
+    <li><a href="#basic" >基本例子</a></li>
+    <li><a href="#customDate">日期自定义</a></li>
+    <li><a href="#expandEvent">展开条件回调事件</a></li>
+    <li><a href="#defaultValue">默认值</a></li>
+    <li><a href="#customData">数据源格式自定义</a></li>
+    <li><a href="javascript:;">错误调试</a></li>
+    <li><a href="javascript:;">print方法</a></li>
+</ul>
+
+<h1 class="title" id="paramRemark">参数说明</h1>
+<table class="table table-bordered">
+    <tbody>
+    <tr class="success">
+        <td colspan="5" style="font-weight: bold;">初始化参数大全</td>
+    </tr>
+    <tr class="warning">
+        <th >参数名</th>
+        <th>字符类型</th>
+        <th>释义说明</th>
+        <th >默认值</th>
+        <th>使用频率</th>
+    </tr>
+    <tr>
+        <td >search</td>
+        <td>function</td>
+        <td>查询事件,回调函数参数paramList为筛选条件</td>
+        <td>null</td>
+        <td>常用</td>
+    </tr>
+    <tr>
+        <td >searchOnSelect</td>
+        <td>boolean</td>
+        <td>点击选项时是否触发查询事件</td>
+        <td>true</td>
+        <td>不常用</td>
+    </tr>
+    <tr>
+        <td >expandRow</td>
+        <td>integer</td>
+        <td>展开筛选条件行数</td>
+        <td>2</td>
+        <td>常用</td>
+    </tr>
+    <tr>
+        <td >expandEvent</td>
+        <td>function</td>
+        <td>展开更多条件触发事件 参数：state  true表示展开  false 收缩  一般可用来改变表格高度</td>
+        <td>null</td>
+        <td>常用</td>
+    </tr>
+    <tr>
+        <td >searchBoxs</td>
+        <td>Array</td>
+        <td>筛选条件项,详情参见<a href="#table_searchBoxsParamList">searchBoxs参数大全</a></td>
+        <td>null</td>
+        <td>必须</td>
+    </tr>
+    </tbody>
+</table>
+<table class="table table-bordered" id="table_searchBoxsParamList">
+    <tbody>
+    <tr class="success">
+        <td colspan="5" style="font-weight: bold;">searchBoxs参数大全</td>
+    </tr>
+    <tr class="warning">
+        <th >参数名</th>
+        <th>字符类型</th>
+        <th>释义说明</th>
+        <th >默认值</th>
+        <th>使用频率</th>
+    </tr>
+    <tr>
+        <td >id</td>
+        <td>string</td>
+        <td>筛选条件项id，在查询回调事件的参数时会用上</td>
+        <td>没传会使用1,2,3...</td>
+        <td>必须</td>
+    </tr>
+    <tr>
+        <td >isMultiple</td>
+        <td>boolean</td>
+        <td>是否允许条件多选</td>
+        <td>false</td>
+        <td>常用</td>
+    </tr>
+    <tr>
+        <td >type</td>
+        <td>string</td>
+        <td>存在自定义日期区间时需设定  值可为 datetime(年月日时分秒) | date(年月日)</td>
+        <td>null</td>
+        <td>常用</td>
+    </tr>
+    <tr>
+        <td >title</td>
+        <td>string</td>
+        <td>筛选条件显示标题</td>
+        <td>null</td>
+        <td>必须</td>
+    </tr>
+    <tr>
+        <td >searchBoxs</td>
+        <td>Array</td>
+        <td>筛选条件项</td>
+        <td>null</td>
+        <td>必须</td>
+    </tr>
+    </tbody>
+</table>
+
+<h1 class="title" id="basic">基本例子</h1>
+<div class="searchbox" id="basic_searchbox"></div>
+<div id="basic_searchbox_param">查询参数:[]</div>
+
+<h1 class="title" id="customDate">日期自定义</h1>
+<div class="searchbox" id="customDate_searchbox"></div>
+<div id="customDate_searchbox_param">查询参数:[]</div>
+
+<h1 class="title" id="expandEvent">展开条件回调事件</h1>
+<div class="searchbox" id="expandEvent_searchbox"></div>
+<div id="expandEvent_searchbox_param">是否展开条件:false</div>
+
+<h1 class="title" id="defaultValue">默认值</h1>
+<div class="searchbox" id="defaultValue_searchbox"></div>
+<div ><pre class="pre-scrollable">
+    【初始化参数】
+    var options = {
+        //查询条件
+        "searchBoxs": [
+            {
+                "id": "Status",
+                "title": "任务状态",
+                "isMultiple":true,
+                <label class="t-red">"defaults": ['0','1'],</label>
+                "data": [
+                    { "value": "0", "text": "运行" },
+                    { "value": "1", "text": "停止" }
+                ]
+            }
+        ]
+    };
+    </pre></div>
+
+<h1 class="title" id="customData">数据源格式自定义</h1>
+<div class="searchbox" id="customData_searchbox"></div>
+<div ><pre  class="pre-scrollable">
+    【初始化参数】
+    var options = {
+        //查询条件
+        "searchBoxs": [
+            {
+                "id": "Task",
+                "title": "任务集合",
+                <label class="t-red">"valueField":"taskId",</label>
+                <label class="t-red">"textField":"taskName",</label>
+                "data": [
+                    { "taskId": "1", "taskName": "代理ip爬虫任务" },
+                    { "taskId": "2", "taskName": "日志清理任务" }
+                ]
+            }
+        ]
+    };
+    </pre></div>
+
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="layer/layer.min.js"></script>
+<script src="layer/laydate/laydate.js"></script>
+<script src="../dist/filterMore.min.js"></script>
+
+<script>
+    $(function () {
+        //基本例子
+        initBasic();
+        //日期自定义
+        initCustomDate()
+        //展开条件回调事件
+        initExpandEvent();
+        //默认值
+        initDefault();
+        //数据源格式自定义
+        initCustomData();
+    });
+
+    //基本例子
+    function  initBasic() {
+        var options = {
+            //查询事件
+            "search": function (paramList) {
+                $("#basic_searchbox_param").html('查询参数:'+JSON.stringify(paramList));
+            },
+            //默认展开条件数
+            "expandRow": 2,
+            //查询条件
+            "searchBoxs": [
+                {
+                    "id": "Status",
+                    "title": "任务状态",
+                    "isMultiple":true,
+                    "data": [
+                        { "value": "0", "text": "运行" },
+                        { "value": "1", "text": "停止" }
+                    ]
+                },
+                {
+                    "id": "Createor",
+                    "title": "创建人",
+                    "data": [
+                        { "value": "admin", "text": "系统管理员" },
+                        { "value": "zhangsan", "text": "张三" }
+                    ]
+                }
+            ]
+        };
+        $("#basic_searchbox").fiterMore(options);
+    }
+
+    //日期自定义
+    function initCustomDate() {
+        var options = {
+            //查询事件
+            "search": function (paramList) {
+                $("#customDate_searchbox_param").html('查询参数:'+JSON.stringify(paramList));
+            },
+            //默认展开条件数
+            "expandRow": 2,
+            //查询条件
+            "searchBoxs": [
+                {
+                    "id": "CreatedTimeOne",
+                    "title": "日期定义",
+                    "type": "datetime",
+                    "isMultiple":true,
+                    "data": [
+                        { "value": "0", "text": "最近10分钟" },
+                        { "value": "1", "text": "最近半小时"},
+                        { "value": "2", "text": "最近1小时"},
+                        { "value": "3", "text": "今天"},
+                        { "value": "4", "text": "昨天"},
+                        { "value": "5", "text": "最近3天"},
+                        { "value": "6", "text": "最近7天"},
+                        { "value": "7", "text": "最近15天" },
+                        { "value": "8", "text": "最近30天"}
+                    ],"isShowAll": false,//是否显示全部
+                    "defaults": ['0'],
+                    "custom": {
+                        "isRange": true,
+                        'event': function (start, end) {
+                            if (!start || !end || start > end) {
+                                var id, tip ;
+                                if (!start) {
+                                    tip = '开始日期必填';
+                                    id = "#searchitem_CreatedTimeOne_c_custom_start";
+                                }
+                                else if (!end) {
+                                    tip = '截止日期必填';
+                                    id = "#searchitem_CreatedTimeOne_c_custom_end";
+                                } else {
+                                    tip = '截止日期必须大于开始日期';
+                                    id = "#searchitem_CreatedTimeOne_c_custom_end";
+                                }
+                                layer.tips(tip, id, {
+                                    tips: 3
+                                });
+                                return false;
+                            }
+                            else {
+                                return true;
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "CreatedTime",
+                    "title": "创建日期",
+                    "type": "datetime",
+                    "data": [
+                        { "value": "0", "text": "最近10分钟" },
+                        { "value": "1", "text": "最近半小时"},
+                        { "value": "2", "text": "最近1小时"},
+                        { "value": "3", "text": "今天"},
+                        { "value": "4", "text": "昨天"},
+                        { "value": "5", "text": "最近3天"},
+                        { "value": "6", "text": "最近7天"},
+                        { "value": "7", "text": "最近15天" },
+                        { "value": "8", "text": "最近30天"}
+                    ]
+                },
+                {
+                    "id": "Status",
+                    "title": "任务状态",
+                    "isMultiple":true,
+                    "data": [
+                        { "value": "0", "text": "运行" },
+                        { "value": "1", "text": "停止" }
+                    ]
+                },
+                {
+                    "id": "Createor",
+                    "title": "创建人",
+                    "data": [
+                        { "value": "admin", "text": "系统管理员" },
+                        { "value": "zhangsan", "text": "张三" }
+                    ]
+                }
+            ]
+        };
+        $("#customDate_searchbox").fiterMore(options);
+
+        //自定义日期搜索初始化
+        $("#searchitem_CreatedTimeOne_c_custom_start").addClass("form-control layer-date");
+        $("#searchitem_CreatedTimeOne_c_custom_end").addClass("form-control layer-date");
+        //日期范围限制
+        var start = {
+            elem: '#searchitem_CreatedTimeOne_c_custom_start',
+            format: 'YYYY-MM-DD hh:mm:ss',
+            max: laydate.now(),
+            istime: true,
+            istoday: true
+        };
+        var end = {
+            elem: '#searchitem_CreatedTimeOne_c_custom_end',
+            format: 'YYYY-MM-DD hh:mm:ss',
+            max: laydate.now(),
+            istime: true,
+            istoday: true
+        };
+        laydate(start);
+        laydate(end);
+    }
+
+    //展开条件回调事件
+    function  initExpandEvent() {
+        var options = {
+            //查询事件
+            "search": function (paramList) {
+            },
+            //默认展开条件数
+            "expandRow": 1,
+            //展开更多条件触发事件
+            "expandEvent": function (state) {
+                //展开更多条件触发事件 参数：state  true表示展开  false 收缩
+                $("#expandEvent_searchbox_param").html("是否展开条件:"+state);
+            },
+            //查询条件
+            "searchBoxs": [
+                {
+                    "id": "Status",
+                    "title": "任务状态",
+                    "isMultiple":true,
+                    "data": [
+                        { "value": "0", "text": "运行" },
+                        { "value": "1", "text": "停止" }
+                    ]
+                },
+                {
+                    "id": "Createor",
+                    "title": "创建人",
+                    "data": [
+                        { "value": "admin", "text": "系统管理员" },
+                        { "value": "zhangsan", "text": "张三" }
+                    ]
+                }
+            ]
+        };
+        $("#expandEvent_searchbox").fiterMore(options);
+    }
+
+    //默认值
+    function initDefault(){
+        var options = {
+            //查询事件
+            "search": function (paramList) {
+            },
+            //查询条件
+            "searchBoxs": [
+                {
+                    "id": "Status",
+                    "title": "任务状态",
+                    "isMultiple":true,
+                    "defaults": ['0','1'], //默认选中值，没有则选中全部
+                    "data": [
+                        { "value": "0", "text": "运行" },
+                        { "value": "1", "text": "停止" }
+                    ]
+                }
+            ]
+        };
+        $("#defaultValue_searchbox").fiterMore(options);
+    }
+
+    //数据源格式自定义
+    function initCustomData(){
+        var options = {
+            //查询事件
+            "search": function (paramList) {
+            },
+            //查询条件
+            "searchBoxs": [
+                {
+                    "id": "Task",
+                    "title": "任务集合",
+                    "valueField":"taskId", //选项json 键字段名称 默认为value
+                    "textField":"taskName",   //选项json 值字段名称 默认为text
+                    "data": [
+                        { "taskId": "1", "taskName": "代理ip爬虫任务" },
+                        { "taskId": "2", "taskName": "日志清理任务" }
+                    ]
+                }
+            ]
+        };
+        $("#customData_searchbox").fiterMore(options);
+    }
+</script>
+</body>
+</html>
