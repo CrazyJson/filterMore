@@ -6,9 +6,9 @@
     <link href="bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../dist/css/fiterMore.min.css">
     <style>
-        .t-red{
-            color: red;
-        }
+        .t-red{  color: red;  }
+        .w150{  width: 150px;  }
+        .w200{  width: 200px;  }
     </style>
 </head>
 <body>
@@ -31,11 +31,11 @@
         <td colspan="5" style="font-weight: bold;">初始化参数大全</td>
     </tr>
     <tr class="warning">
-        <th >参数名</th>
-        <th>字符类型</th>
+        <th class="w200">参数名</th>
+        <th class="w150">字符类型</th>
         <th>释义说明</th>
-        <th >默认值</th>
-        <th>使用频率</th>
+        <th class="w150">默认值</th>
+        <th class="w150">使用频率</th>
     </tr>
     <tr>
         <td >search</td>
@@ -72,6 +72,20 @@
         <td>null</td>
         <td>必须</td>
     </tr>
+    <tr>
+        <td >paramkey</td>
+        <td>string</td>
+        <td>参数收集时返回值的Key</td>
+        <td>ValueList</td>
+        <td>不常用</td>
+    </tr>
+    <tr>
+        <td >paramCustomkey</td>
+        <td>string</td>
+        <td>参数收集时自定义条件返回值的Key</td>
+        <td>CustomList</td>
+        <td>不常用</td>
+    </tr>
     </tbody>
 </table>
 <table class="table table-bordered" id="table_searchBoxsParamList">
@@ -80,11 +94,11 @@
         <td colspan="5" style="font-weight: bold;">searchBoxs参数大全</td>
     </tr>
     <tr class="warning">
-        <th >参数名</th>
-        <th>字符类型</th>
+        <th class="w200">参数名</th>
+        <th class="w150">字符类型</th>
         <th>释义说明</th>
-        <th >默认值</th>
-        <th>使用频率</th>
+        <th class="w150">默认值</th>
+        <th class="w150">使用频率</th>
     </tr>
     <tr>
         <td >id</td>
@@ -115,11 +129,103 @@
         <td>必须</td>
     </tr>
     <tr>
-        <td >searchBoxs</td>
+        <td >valueField</td>
+        <td>string</td>
+        <td>选项数据 键字段名称</td>
+        <td>value</td>
+        <td>不常用</td>
+    </tr>
+    <tr>
+        <td >textField</td>
+        <td>string</td>
+        <td>选项数据 值字段名称</td>
+        <td>text</td>
+        <td>不常用</td>
+    </tr>
+    <tr>
+        <td >isShowAll</td>
+        <td>boolean</td>
+        <td>是否显示选项中的全部</td>
+        <td>true</td>
+        <td>不常用</td>
+    </tr>
+    <tr>
+        <td >defaults</td>
         <td>Array</td>
-        <td>筛选条件项</td>
+        <td>默认选中值，为空则选中全部</td>
+        <td>null</td>
+        <td>常用</td>
+    </tr>
+    <tr>
+        <td >data</td>
+        <td>Array</td>
+        <td>选项数据,数据格式[{value:'1',text:'语文'},{value:'2',text:'数学'}]</td>
         <td>null</td>
         <td>必须</td>
+    </tr>
+    <tr>
+        <td >custom</td>
+        <td>object</td>
+        <td>自定义筛选,详情参见<a href="#table_customParamList">custom参数大全</a></td>
+        <td>null</td>
+        <td>常用</td>
+    </tr>
+    </tbody>
+</table>
+
+<table class="table table-bordered" id="table_customParamList">
+    <tbody>
+    <tr class="success">
+        <td colspan="5" style="font-weight: bold;">custom参数大全</td>
+    </tr>
+    <tr class="warning">
+        <th class="w200">参数名</th>
+        <th class="w150">字符类型</th>
+        <th>释义说明</th>
+        <th class="w150">默认值</th>
+        <th class="w150">使用频率</th>
+    </tr>
+    <tr>
+        <td >isRange</td>
+        <td>boolean</td>
+        <td>是否区间,用于控制自定义输入框个数 为false一个输入框 true两个输入框</td>
+        <td>false</td>
+        <td>非必须</td>
+    </tr>
+    <tr>
+        <td >event</td>
+        <td>function</td>
+        <td>点击确定按钮回调事件，函数体申明如下 function(start,end){} isRange为false时 start有值 end:undefined isRange为true时都有值 ,函数返回值为boolean类型 为false时不触发查询事件</td>
+        <td>null</td>
+        <td>常用</td>
+    </tr>
+    </tbody>
+</table>
+
+<table class="table table-bordered">
+    <tbody>
+    <tr class="success">
+        <td colspan="5" style="font-weight: bold;">方法大全</td>
+    </tr>
+    <tr class="warning">
+        <th class="w200">方法名</th>
+        <th class="w150">方法功能</th>
+        <th class="w150">参数</th>
+        <th class="w150">返回值</th>
+        <th>返回值说明</th>
+    </tr>
+    <tr>
+        <td >getParamList</td>
+        <td>获取搜索条件参数</td>
+        <td>无</td>
+        <td>array[]</td>
+        <td>:[
+            {{"CustomList":["2016-09-01 00:00:00","2016-09-15 00:00:00"] //自定义区间值
+             ,"isMultiple":false,"id":"CreatedTimeOne"},
+            {"ValueList":["1"] //选中值,"isMultiple":false,"id":"CreatedTime"},
+            {"ValueList":["0","1"],"isMultiple":true,"id":"Status"},
+            {"ValueList":[],"isMultiple":false,"id":"Createor"}
+            ]</td>
     </tr>
     </tbody>
 </table>
@@ -245,7 +351,6 @@
                     "id": "CreatedTimeOne",
                     "title": "日期定义",
                     "type": "datetime",
-                    "isMultiple":true,
                     "data": [
                         { "value": "0", "text": "最近10分钟" },
                         { "value": "1", "text": "最近半小时"},
@@ -299,7 +404,15 @@
                         { "value": "6", "text": "最近7天"},
                         { "value": "7", "text": "最近15天" },
                         { "value": "8", "text": "最近30天"}
-                    ]
+                    ],
+                    "custom": {
+                        'event': function (start, end) {
+                            console.log(start);
+                            console.log(end);
+                            //返回false不会触发查询事件
+                            return false;
+                        }
+                    }
                 },
                 {
                     "id": "Status",

@@ -289,6 +289,6 @@ Released under the MIT, BSD, and GPL Licenses
 
 ============
 
-[所有演示例子](http://aui.github.com/artTemplate/demo/index.html) | [引擎原理](http://cdc.tencent.com/?p=5723)
+[所有演示例子](https://CrazyJson.github.com/filterMore/demo/index.html)
 
 © tencent.com
