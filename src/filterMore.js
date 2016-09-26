@@ -613,6 +613,9 @@ $.extend(String.prototype, {
                                 for (var i = 0; i < valueList.length; i++) {
                                     itemSpans.filter("[data-value='{0}']".format(valueList[i])).addClass("selected");
                                     item.selected.push(valueList[i]);
+                                    if(!item.isMultiple){
+                                        break;
+                                    }
                                 }
                             } else if (customValueList && customValueList.length > 0) {
                                 //自定义选中赋值
@@ -658,7 +661,7 @@ $.extend(String.prototype, {
          */
         getParamList: function () {
             var that = this[0];
-            if (that.isSeachBox) {
+            if (that.isFiterMore) {
                 return that.getParamList();
             }
         },
