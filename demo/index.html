@@ -55,7 +55,7 @@
 <h4 style="font-weight: bold;">插件来源</h4>
 <p class="pContent">
     在开发该插件前，本着拿来主义的精神，寻找了很多前端插件库，没有找到类似插件。只能自己动手，经过差不多一年的项目检验，足步完善，自认为已经比较成熟。
-    她尽可能地在以更少的代码展现更强健的功能，且格外注重性能的提升、易用和实用性。当然，这种“王婆卖瓜”的陈述听起来总是有点难受，因此你需要进一步了解她是否真的如你所愿。
+    她尽可能地在以更少的代码展现更强健的功能，且格外注重性能的提升、易用和实用性。当然，这种“王婆卖瓜”的陈述听起来总是有点难以难受，因此你需要进一步了解她是否真的如你所愿。
 </p>
 
 <h1 class="title" id="paramRemark">参数说明</h1>
@@ -295,7 +295,7 @@
         //查询条件
         "searchBoxs": [
             {
-                "id": "Status",
+                "id": "Status_Default",
                 "title": "任务状态",
                 "isMultiple":true,
                 <label class="t-red">"defaults": ['0','1'],</label>
@@ -316,7 +316,7 @@
         //查询条件
         "searchBoxs": [
             {
-                "id": "Task",
+                "id": "Task_CustomData",
                 "title": "任务集合",
                 <label class="t-red">"valueField":"taskId",</label>
                 <label class="t-red">"textField":"taskName",</label>
@@ -356,14 +356,14 @@
 
 <h1 class="title" id="about">关于作者</h1>
 <p class="pContent">
-    焰尾迭是一个笔名，09年就开始在用了。12年毕业于武汉某高校，在武汉工作至今，转眼已经四年多了。坦诚而言，我的职业生涯谈不上多么靓丽，很大的一个重点可能是在于，我本身惰性。一段时间不动手写写东西自己就会
-    想着法子偷懒，所以这次耐心写完此篇，只希望能向大牛更进一步。
+    焰尾迭是一个笔名，09年就开始在用了。12年毕业于武汉某高校，在武汉工作至今，转眼已经四年多了。坦诚而言，我的职业生涯谈不上多么靓丽，很大的一个重点可能是在于，我本身的惰性。一段时间不动手写写东西就会
+    偷懒，所以此次耐心写完此篇，只希望能向大牛更进一步。
 </p>
 <p class="pContent">
-    这是我第一次在github上写帮助页面，慢慢摸索了很久，才搞清楚怎么玩。前前后后花了好几天，只希望把帮助文档写的详细些，各种参数的使用方式都介绍清楚。不足之处还望见谅！
+    第一次在github上写帮助页面，慢慢摸索了很久，才搞清楚怎么玩。只希望把帮助文档写的详细些，各种参数的使用方式都介绍清楚。不足之处还望见谅！
 </p>
 <p class="pContent">
-    博客园地址:<a href="http://yanweidie.blogs.com" target="_blank">http://yanweidie.blogs.com</a>
+    博客园地址:<a href="http://yanweidie.cnblogs.com" target="_blank">http://yanweidie.cnblogs.com</a>
     插件GitHub地址:<a href="https://github.com/CrazyJson/filterMore" target="_blank">https://github.com/CrazyJson/filterMore</a>
 </p>
 
@@ -386,7 +386,10 @@
         $(".navbar-nav>li").on("click",function () {
            $(this).addClass("active").siblings().removeClass('active');
         });
-
+        var tag = window.location.hash;
+        if(tag){
+            $(".navbar-nav>li>a[href='"+tag+"']").parent().trigger('click');
+        }
         //基本例子
         initBasic();
         //日期自定义

@@ -14,15 +14,10 @@
 
 ##	特性
 
-1.	性能卓越，执行速度通常是 Mustache 与 tmpl 的 20 多倍（[性能测试](http://aui.github.com/artTemplate/test/test-speed.html)）
-2.	支持运行时调试，可精确定位异常模板所在语句（[演示](http://aui.github.io/artTemplate/demo/debug.html)）
-3.	对 NodeJS Express 友好支持
-4.	安全，默认对输出进行转义、在沙箱中运行编译后的代码（Node版本可以安全执行用户上传的模板）
-5.	支持``include``语句
-6.	可在浏览器端实现按路径加载模板（[详情](#使用预编译)）
-7.	支持预编译，可将模板转换成为非常精简的 js 文件
-8.	模板语句简洁，无需前缀引用数据，有简洁版本与原生语法版本可选
-9.	支持所有流行的浏览器
+1.	首款开源筛选插件
+2.	参数配置项多，功能强大（[演示](https://CrazyJson.github.com/filterMore/demo/index.html)）
+3.	轻量级(8k)
+4.	支持所有流行的浏览器
 
 ## 快速上手
 
