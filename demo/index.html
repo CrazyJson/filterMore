@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="mumayi_top/css/mumayi_top.css">
     <link rel="stylesheet" href="../dist/css/fiterMore.min.css">
     <style>
-        body { padding-top: 70px; padding-left: 20px;padding-right: 20px;padding-bottom: 20px;}
+        body { padding-top: 70px; padding-left: 20px;padding-right: 20px;padding-bottom: 20px; font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;}
         .t-red{  color: red;  }
         .w150{  width: 150px;  }
         .w200{  width: 200px;  }
+        h1{
+            background: #2B6695;
+            border-radius: 6px 6px 6px 6px;
+            box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+            color: #FFFFFF;
+            font-size: 17px;
+            font-weight: bold;
+            line-height: 25px;
+            margin: 15px 0 !important;
+            padding: 5px 0 5px 20px;
+            text-shadow: 2px 2px 3px #222222;
+        }
+        .pContent{font-size: 16px;text-indent: 2em;}
     </style>
 </head>
 <body>
@@ -20,7 +33,7 @@
     <div class="container">
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">filterMore</a></li>
+                <li class="active"><a href="#main">filterMore</a></li>
                 <li><a href="#paramRemark" >参数说明</a></li>
                 <li><a href="#basic" >基本例子</a></li>
                 <li><a href="#customDate">日期自定义</a></li>
@@ -28,12 +41,22 @@
                 <li><a href="#defaultValue">默认值</a></li>
                 <li><a href="#customData">数据源格式自定义</a></li>
                 <li><a href="#functionCall">方法调用</a></li>
-                <li><a href="#tryOnline">试一下</a></li>
-                <li><a href="#about">关于</a></li>
+                <li><a href="#about">关于作者</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
+<h1 class="title" id="main">filterMore</h1>
+<h4 style="font-weight: bold;">目地</h4>
+<p class="pContent"> fiterMore是本人开源的第一框前端插件，基于bootstrap部分样式，旨在帮助开发者轻松实现现代化风格的筛选条件。参考某东，某宝的筛选条件。
+</p>
+<img src="images/demo.png" style="max-width: 100%;">
+<h4 style="font-weight: bold;">插件来源</h4>
+<p class="pContent">
+    在开发该插件前，本着拿来主义的精神，寻找了很多前端插件库，没有找到类似插件。只能自己动手，经过差不多一年的项目检验，足步完善，自认为已经比较成熟。
+    她尽可能地在以更少的代码展现更强健的功能，且格外注重性能的提升、易用和实用性。当然，这种“王婆卖瓜”的陈述听起来总是有点难受，因此你需要进一步了解她是否真的如你所愿。
+</p>
 
 <h1 class="title" id="paramRemark">参数说明</h1>
 <table class="table table-bordered">
@@ -331,13 +354,18 @@
     <div id="functionCall_searchbox_param">查询参数:[]</div>
 
 
-<h1 class="title" id="tryOnline">试一下(输入初始化参数json)</h1>
-<div class="searchbox" id="tryOnline_searchbox"></div>
-<p><textarea class="runcode" style="width: 90%; height: 100px;">
-</textarea></p>
-<div style="padding-top: 10px;">
-    <button type="button" class="btn btn-default btn-sm" id="btn_tryOnline">运行代码</button>
-</div>
+<h1 class="title" id="about">关于作者</h1>
+<p class="pContent">
+    焰尾迭是一个笔名，09年就开始在用了。12年毕业于武汉某高校，在武汉工作至今，转眼已经四年多了。坦诚而言，我的职业生涯谈不上多么靓丽，很大的一个重点可能是在于，我本身惰性。一段时间不动手写写东西自己就会
+    想着法子偷懒，所以这次耐心写完此篇，只希望能向大牛更进一步。
+</p>
+<p class="pContent">
+    这是我第一次在github上写帮助页面，慢慢摸索了很久，才搞清楚怎么玩。前前后后花了好几天，只希望把帮助文档写的详细些，各种参数的使用方式都介绍清楚。不足之处还望见谅！
+</p>
+<p class="pContent">
+    博客园地址:<a href="http://yanweidie.blogs.com" target="_blank">http://yanweidie.blogs.com</a>
+    插件GitHub地址:<a href="https://github.com/CrazyJson/filterMore" target="_blank">https://github.com/CrazyJson/filterMore</a>
+</p>
 
 
 <div style="display: none;" id="rocket-to-top">
@@ -351,12 +379,14 @@
 <script src="layer/layer.min.js"></script>
 <script src="layer/laydate/laydate.js"></script>
 <script src="mumayi_top/mumayi_top.min.js"></script>
-
-<script src="../src/filterMore.js"></script>
-<!--<script src="../dist/filterMore.min.js"></script>-->
+<script src="../dist/filterMore.min.js"></script>
 
 <script>
     $(function () {
+        $(".navbar-nav>li").on("click",function () {
+           $(this).addClass("active").siblings().removeClass('active');
+        });
+
         //基本例子
         initBasic();
         //日期自定义
@@ -656,6 +686,7 @@
             $("#btn_getParamList").trigger('click')
         })
     }
+
 </script>
 </body>
 </html>
