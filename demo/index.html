@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="mumayi_top/css/mumayi_top.css">
     <link rel="stylesheet" href="../dist/css/fiterMore.min.css">
     <style>
-        body { padding-top: 70px; padding-left: 20px;padding-right: 20px;padding-bottom: 20px; font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;}
+        body { padding-top: 70px; padding-left: 20px;padding-right: 20px;padding-bottom: 20px; }
         .t-red{  color: red;  }
         .w150{  width: 150px;  }
         .w200{  width: 200px;  }
@@ -33,7 +33,7 @@
     <div class="container">
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#main">filterMore</a></li>
+                <li><a href="#main">filterMore</a></li>
                 <li><a href="#paramRemark" >参数说明</a></li>
                 <li><a href="#basic" >基本例子</a></li>
                 <li><a href="#customDate">日期自定义</a></li>
@@ -367,6 +367,7 @@
     插件GitHub地址:<a href="https://github.com/CrazyJson/filterMore" target="_blank">https://github.com/CrazyJson/filterMore</a>
 </p>
 
+<div id="footer"></div>
 
 <div style="display: none;" id="rocket-to-top">
     <div style="opacity:0;display: block;" class="level-2"></div>
@@ -383,13 +384,10 @@
 
 <script>
     $(function () {
-        $(".navbar-nav>li").on("click",function () {
-           $(this).addClass("active").siblings().removeClass('active');
-        });
         var tag = window.location.hash;
-        if(tag){
-            $(".navbar-nav>li>a[href='"+tag+"']").parent().trigger('click');
-        }
+        tag=tag || '#main';
+        $(".navbar-nav>li>a[href='"+tag+"']").parent().addClass("active").siblings().removeClass('active').trigger('click');
+
         //基本例子
         initBasic();
         //日期自定义
