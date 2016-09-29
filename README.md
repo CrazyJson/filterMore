@@ -15,7 +15,7 @@
 ##	特性
 
 1.	首款开源筛选插件
-2.	参数配置项多，功能强大（[演示](https://CrazyJson.github.com/filterMore/demo/index.html)）
+2.	参数配置项多，功能强大（[演示](https://crazyjson.github.io/filterMore/demo/index.html)）
 3.	轻量级(8k)
 4.	支持所有流行的浏览器
 
@@ -58,7 +58,7 @@
         };
         $("#basic_searchbox").fiterMore(options);
 
-[演示](https://CrazyJson.github.com/filterMore/demo/index.html#basic)
+[演示](https://crazyjson.github.io/filterMore/demo/index.html#basic)
 
 ##	默认值
 
@@ -84,7 +84,7 @@
                };
                $("#defaultValue_searchbox").fiterMore(options);
 
-[演示](https://CrazyJson.github.com/filterMore/demo/index.html#defaultValue)
+[演示](https://crazyjson.github.io/filterMore/demo/index.html#defaultValue)
 
 ###	数据源格式自定义
 
@@ -110,7 +110,7 @@
         };
         $("#customData_searchbox").fiterMore(options);
 	
-[演示](https://CrazyJson.github.com/filterMore/demo/index.html#customData)
+[演示](https://crazyjson.github.io/filterMore/demo/index.html#customData)
 
 ##	下载
 
@@ -136,7 +136,7 @@ options：{"setValue":[]} key为要调用的函数名称 value:为函数调用�
 	    {getParamList:null}
 	)
 
-[演示](https://CrazyJson.github.com/filterMore/demo/index.html#functionCall)
+[演示](https://crazyjson.github.io/filterMore/demo/index.html#functionCall)
 
 
 ## 更新日志
@@ -151,5 +151,5 @@ Released under the MIT, BSD, and GPL Licenses
 
 ============
 
-[所有演示例子](https://CrazyJson.github.com/filterMore/demo/index.html)
+[所有演示例子](https://crazyjson.github.io/filterMore/demo/index.html)
 
