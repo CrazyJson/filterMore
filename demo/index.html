@@ -275,19 +275,19 @@
     </tbody>
 </table>
 
-<h1 class="title" id="basic">基本例子</h1>
+<h1 class="col-title" id="basic">基本例子</h1>
 <div class="searchbox" id="basic_searchbox"></div>
 <div id="basic_searchbox_param">查询参数:[]</div>
 
-<h1 class="title" id="customDate">日期自定义</h1>
+<h1 class="col-title" id="customDate">日期自定义</h1>
 <div class="searchbox" id="customDate_searchbox"></div>
 <div id="customDate_searchbox_param">查询参数:[]</div>
 
-<h1 class="title" id="expandEvent">展开条件回调事件</h1>
+<h1 class="col-title" id="expandEvent">展开条件回调事件</h1>
 <div class="searchbox" id="expandEvent_searchbox"></div>
 <div id="expandEvent_searchbox_param">是否展开条件:false</div>
 
-<h1 class="title" id="defaultValue">默认值</h1>
+<h1 class="col-title" id="defaultValue">默认值</h1>
 <div class="searchbox" id="defaultValue_searchbox"></div>
 <div ><pre class="pre-scrollable">
     【初始化参数】
@@ -308,7 +308,7 @@
     };
     </pre></div>
 
-<h1 class="title" id="customData">数据源格式自定义</h1>
+<h1 class="col-title" id="customData">数据源格式自定义</h1>
 <div class="searchbox" id="customData_searchbox"></div>
 <div ><pre  class="pre-scrollable">
     【初始化参数】
@@ -329,7 +329,7 @@
     };
     </pre></div>
 
-<h1 class="title" id="functionCall">方法调用</h1>
+<h1 class="col-title" id="functionCall">方法调用</h1>
 <div style="padding-bottom: 10px;">
     <button type="button" class="btn btn-default btn-sm" id="btn_getParamList">getParamList(获取选中值)</button>
     <button type="button" class="btn btn-primary btn-sm" id="btn_setValue">setValue(设置控件选中值)</button>
@@ -354,7 +354,7 @@
     <div id="functionCall_searchbox_param">查询参数:[]</div>
 
 
-<h1 class="title" id="about">关于作者</h1>
+<h1 class="col-title" id="about">关于作者</h1>
 <p class="pContent">
     焰尾迭是一个笔名，09年就开始在用了。12年毕业于武汉某高校，在武汉工作至今，转眼已经四年多了。坦诚而言，我的职业生涯谈不上多么靓丽，很大的一个重点可能是在于，我本身的惰性。一段时间不动手写写东西就会
     偷懒，所以此次耐心写完此篇，只希望能向大牛更进一步。
@@ -365,6 +365,20 @@
 <p class="pContent">
     博客园地址:<a href="http://yanweidie.cnblogs.com" target="_blank">http://yanweidie.cnblogs.com</a>
     插件GitHub地址:<a href="https://github.com/CrazyJson/filterMore" target="_blank">https://github.com/CrazyJson/filterMore</a>
+</p>
+
+
+<div align="center" style="width: 700px;">
+    <a href="javascript:void(0)" style="padding-right: 30px;"><img width="180" height="180" class="alignnone" alt="支付宝捐赠" src="http://images2015.cnblogs.com/blog/336693/201605/336693-20160524174752163-1554089556.png">
+    </a>
+    <a href="javascript:void(0)">
+    <img width="180" height="180" class="alignnoe" alt="微信打赏" src="http://images2015.cnblogs.com/blog/336693/201605/336693-20160524174809834-1334095025.png" ></a>
+</div>
+<p class="pContent" style="color: #FF7200;">    如果你认为该插件帮助到了您，
+    不妨扫描上面二维码，
+    帮助一下我，
+    有了您的资助，
+    将提供更加优质的资源。
 </p>
 
 <div id="footer"></div>
@@ -387,7 +401,7 @@
         var tag = window.location.hash;
         tag=tag || '#main';
         $(".navbar-nav>li>a[href='"+tag+"']").parent().addClass("active").siblings().removeClass('active').trigger('click');
-
+        
         //基本例子
         initBasic();
         //日期自定义
