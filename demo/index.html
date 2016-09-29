@@ -72,18 +72,18 @@
         <th class="w150">使用频率</th>
     </tr>
     <tr>
+        <td >searchBoxs</td>
+        <td>Array</td>
+        <td>筛选条件项,详情参见<a href="#table_searchBoxsParamList">searchBoxs参数大全</a></td>
+        <td>null</td>
+        <td>必须</td>
+    </tr>
+    <tr>
         <td >search</td>
         <td>function</td>
         <td>查询事件,回调函数参数paramList为筛选条件</td>
         <td>null</td>
         <td>常用</td>
-    </tr>
-    <tr>
-        <td >searchOnSelect</td>
-        <td>boolean</td>
-        <td>点击选项时是否触发查询事件</td>
-        <td>true</td>
-        <td>不常用</td>
     </tr>
     <tr>
         <td >expandRow</td>
@@ -100,13 +100,6 @@
         <td>常用</td>
     </tr>
     <tr>
-        <td >searchBoxs</td>
-        <td>Array</td>
-        <td>筛选条件项,详情参见<a href="#table_searchBoxsParamList">searchBoxs参数大全</a></td>
-        <td>null</td>
-        <td>必须</td>
-    </tr>
-    <tr>
         <td >paramkey</td>
         <td>string</td>
         <td>参数收集时返回值的Key</td>
@@ -118,6 +111,13 @@
         <td>string</td>
         <td>参数收集时自定义条件返回值的Key</td>
         <td>CustomList</td>
+        <td>不常用</td>
+    </tr>
+    <tr>
+        <td >searchOnSelect</td>
+        <td>boolean</td>
+        <td>点击选项时是否触发查询事件</td>
+        <td>true</td>
         <td>不常用</td>
     </tr>
     </tbody>
@@ -142,6 +142,20 @@
         <td>必须</td>
     </tr>
     <tr>
+        <td >title</td>
+        <td>string</td>
+        <td>筛选条件显示标题</td>
+        <td>null</td>
+        <td>必须</td>
+    </tr>
+    <tr>
+        <td >data</td>
+        <td>Array</td>
+        <td>选项数据,数据格式[{value:'1',text:'语文'},{value:'2',text:'数学'}]</td>
+        <td>null</td>
+        <td>必须</td>
+    </tr>
+    <tr>
         <td >isMultiple</td>
         <td>boolean</td>
         <td>是否允许条件多选</td>
@@ -156,11 +170,18 @@
         <td>常用</td>
     </tr>
     <tr>
-        <td >title</td>
-        <td>string</td>
-        <td>筛选条件显示标题</td>
+        <td >defaults</td>
+        <td>Array</td>
+        <td>默认选中值，为空则选中全部</td>
         <td>null</td>
-        <td>必须</td>
+        <td>常用</td>
+    </tr>
+    <tr>
+        <td >custom</td>
+        <td>object</td>
+        <td>自定义筛选,详情参见<a href="#table_customParamList">custom参数大全</a></td>
+        <td>null</td>
+        <td>常用</td>
     </tr>
     <tr>
         <td >valueField</td>
@@ -182,27 +203,6 @@
         <td>是否显示选项中的全部</td>
         <td>true</td>
         <td>不常用</td>
-    </tr>
-    <tr>
-        <td >defaults</td>
-        <td>Array</td>
-        <td>默认选中值，为空则选中全部</td>
-        <td>null</td>
-        <td>常用</td>
-    </tr>
-    <tr>
-        <td >data</td>
-        <td>Array</td>
-        <td>选项数据,数据格式[{value:'1',text:'语文'},{value:'2',text:'数学'}]</td>
-        <td>null</td>
-        <td>必须</td>
-    </tr>
-    <tr>
-        <td >custom</td>
-        <td>object</td>
-        <td>自定义筛选,详情参见<a href="#table_customParamList">custom参数大全</a></td>
-        <td>null</td>
-        <td>常用</td>
     </tr>
     </tbody>
 </table>
