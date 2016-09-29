@@ -126,8 +126,15 @@
 ###	searchFunctionCall(options)
 options：{"setValue":[]} key为要调用的函数名称 value:为函数调用参数
 
-	setValue函数为赋值函数 调用如下 $(".searchbox").searchFunctionCall({setValue:[{"ValueList":["1"],"id":"CreatedTime"}]}) 
-	getParamList函数为取值函数 调用如下 $(".searchbox").searchFunctionCall({getParamList:null})
+	setValue函数为赋值函数 调用如下 $(".searchbox").searchFunctionCall(
+	{
+	    setValue:[
+	        {"ValueList":["1"],"id":"CreatedTime"}
+	    ]
+	})
+	getParamList函数为取值函数 调用如下 $(".searchbox").searchFunctionCall(
+	    {getParamList:null}
+	)
 
 [演示](https://CrazyJson.github.com/filterMore/demo/index.html#functionCall)
 
