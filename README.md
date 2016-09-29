@@ -136,7 +136,7 @@ options：{"setValue":[]} key为要调用的函数名称 value:为函数调用�
 
 ### v1.0 release
 
-1.发布版本：<https://github.com/CrazyJson/fiterMore>
+1.发布版本：<https://github.com/CrazyJson/filterMore>
 
 ## 授权协议
 
