@@ -398,9 +398,13 @@
 
 <script>
     $(function () {
+        $("#navbar>ul>li").on("click",function () {
+            $(this).addClass("active").siblings().removeClass('active');
+        });
+
         var tag = window.location.hash;
         tag=tag || '#main';
-        $(".navbar-nav>li>a[href='"+tag+"']").parent().addClass("active").siblings().removeClass('active').trigger('click');
+        $(".navbar-nav>li>a[href='"+tag+"']").parent().trigger('click');
 
         //基本例子
         initBasic();
