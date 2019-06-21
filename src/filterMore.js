@@ -310,11 +310,13 @@ $.extend(String.prototype, {
                 });
 
                 searchCtl.html(strHTML);
-                $(".searchbox .searchbox-item").each(function (i) {
-                    var height = $(this).find(".filter_option").outerHeight();
-                    if (height <= 30) {
-                        $(this).find(".r").remove();
-                    }
+                $(settings.searchBoxs).each(function (i, item) {
+                    $("#" + item.id).each(function (i) {
+                        var height = $(this).find(".filter_option").outerHeight();
+                        if (height <= 30) {
+                            $(this).find(".r").remove();
+                        }
+                    });
                 });
                 //如果默认展开行数小于总条数
                 if (settings.expandRow < settings.searchBoxs.length) {
